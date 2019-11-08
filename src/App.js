@@ -1,13 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { connect } from "react-redux";
+import GuardianList from "./components/GuardianList"
+
+
 
 function App() {
   return (
     <div className="App">
-        
+      <GuardianList/>
     </div>
   );
+
+
+}
+function mapStateToProps(state){
+  return {
+    username: state.username
+  }
 }
 
-export default App;
+
+export default connect(mapStateToProps,{})(App);
