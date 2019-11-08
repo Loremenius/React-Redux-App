@@ -7,7 +7,7 @@ const Clan = (props) =>{
     return(
         <div className="clan">
             <h2>Clan</h2>
-            <img src={props.bannerURL}/>
+            <img className="clanBannerImg" src={props.bannerURL}/>
             <h3>{props.clanName} [{props.callsign}]</h3>
             <p>{props.motto}</p>
             <p>{props.about}</p>

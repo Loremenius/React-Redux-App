@@ -6,13 +6,17 @@ import { connect } from "react-redux";
 
 const Guardian = (props) =>{
 
+    console.log(props.displayName);
     return(
         <div>
             <h1>{props.displayName}</h1>
+            <h2>Characters</h2>
+            <div className="characters">
+                {props.characterData.map(((item,index)=>
+                    <Characters key={index} character={item}/>
+                ))}
+            </div>
             <Clan/>
-            {props.characterData.map(((item,index)=>
-                <Characters key={index} character={item}/>
-            ))}
         </div>
     )
 }
@@ -21,7 +25,7 @@ const Guardian = (props) =>{
 function mapStateToProps(state){
     return {
         characterData: state.guardian.characterData,
-        displayName: state.displayName
+        displayName: state.guardian.displayName
     }
 }
 export default connect(mapStateToProps,{})(Guardian);

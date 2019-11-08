@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import { connect } from "react-redux";
 import { fetchGuardian } from "../actions"
 import  Guardian  from "./Guardian";
+import * as loading from "../img/ghostLoading2.gif"
 
 const GuardianList = (props) =>{
     const [name, setName] = useState('');
@@ -14,7 +15,6 @@ const GuardianList = (props) =>{
         props.fetchGuardian(name)
         setName('');
       }
-      console.log(props.guardian)
       function checkData(){
           if(props.guardian.displayName !== "" && props.isFetching === false && props.error === null){
               return(<Guardian/>)
@@ -24,11 +24,13 @@ const GuardianList = (props) =>{
       }
     return(
         <div className ="list">
-            <form>
-                <input type= "text" name="task" onChange={handleNameChange} value={name}></input>
+            <form className="form">
+                <input type= "text" name="task" onChange={handleNameChange} value={name} placeholder="Enter Guardian's Username"></input>
+                <br></br>
+                <br></br>
                 <button onClick={handleSearchName}>Find Guardian</button>
             </form>
-            {props.isFetching && <div>Fetching Guardian</div>}
+            {props.isFetching && <img src={loading}/>}
             {props.error && <div>{props.error}</div>}
             {checkData()}
         </div>
