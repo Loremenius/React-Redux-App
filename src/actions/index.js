@@ -59,7 +59,7 @@ export function fetchGuardian(username) {
         })
     })
       .catch((error)=>{
-          dispatch(guardianLoadFailure('Cannot find Guardian'));
+          dispatch(guardianLoadFailure(error));
       })
     };
   }
