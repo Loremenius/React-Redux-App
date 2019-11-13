@@ -59,7 +59,7 @@ export function fetchGuardian(username) {
         })
     })
       .catch((error)=>{
-          dispatch(guardianLoadFailure(error));
+          dispatch(guardianLoadFailure(error.response.data));
       })
     };
   }
