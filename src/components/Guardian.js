@@ -13,7 +13,7 @@ const Guardian = (props) =>{
             <h2>Characters</h2>
             <div className="characters">
                 {props.characterData.map(((item,index)=>
-                    <Characters key={index} character={item}/>
+                    <Characters key={index} character={item} classData={props.classData} raceData={props.raceData}/>
                 ))}
             </div>
             <Clan/>
@@ -25,7 +25,9 @@ const Guardian = (props) =>{
 function mapStateToProps(state){
     return {
         characterData: state.guardian.characterData,
-        displayName: state.guardian.displayName
+        displayName: state.guardian.displayName,
+        classData: state.classData,
+        raceData:state.raceData
     }
 }
 export default connect(mapStateToProps,{})(Guardian);
