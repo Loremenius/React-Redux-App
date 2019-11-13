@@ -31,7 +31,7 @@ const GuardianList = (props) =>{
                 <button onClick={handleSearchName}>Find Guardian</button>
             </form>
             {props.isFetching && <img src={loading}/>}
-            {props.error && <div>{props.error.message}</div>}
+            {props.error && <div>{props.error.Message}</div>}
             {checkData()}
         </div>
     )
