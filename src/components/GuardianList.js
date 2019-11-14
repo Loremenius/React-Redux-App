@@ -25,7 +25,7 @@ const GuardianList = (props) =>{
     return(
         <div className ="list">
             <form className="form">
-                <input type= "text" name="task" onChange={handleNameChange} value={name} placeholder="Enter Guardian's Username"></input>
+                <input type= "text" name="task" onChange={handleNameChange} value={name} placeholder="Enter Guardian's Steam Username"></input>
                 <br></br>
                 <br></br>
                 <button onClick={handleSearchName}>Find Guardian</button>

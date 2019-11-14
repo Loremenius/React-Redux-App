@@ -18,7 +18,7 @@ export function fetchGuardian(username) {
     let playerData = {};
     return function(dispatch) {
       dispatch(guardianLoading());
-      return axios.get(`https://www.bungie.net/Platform/Destiny2/SearchDestinyPlayer/-1/${username}/`, header)
+      return axios.get(`https://www.bungie.net/Platform/Destiny2/SearchDestinyPlayer/3/${username}/`, header)
       .then((response)=>{
         //console.log(response.data.Response[0]);
        // dispatch(guardianLoadSuccess(response.data.Response[0]))
